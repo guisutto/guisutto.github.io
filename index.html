@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Tic Tac Toe </title>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+
+<h1 class="gamename">Tic Tac Toe</h1>
+
+<p class="players"> <span> Player 1 </span> = X  <br> <span> Player 2 </span> = O  </p>
+
+<div class="container" id="main">
+<span id="turn"> Play </span>
+<div class="box" id="box1"></div>
+<div class="box" id="box2"></div>
+<div class="box" id="box3"></div>
+<div class="box" id="box4"></div>
+<div class="box" id="box5"></div>
+<div class="box" id="box6"></div>
+<div class="box" id="box7"></div>
+<div class="box" id="box8"></div>
+<div class="box" id="box9"></div>
+</div>
+
+<button onclick="replay()"> Play Again </button>
+
+<p class="credits">Last update 19/11/2019 <br> <br> By Ivanna & Guilherme </p>
+
+<script type="text/javascript">
+
+var turn = document.getElementById("turn"),
+
+boxes = document.querySelectorAll("#main div"),
+X_or_O = 0;
+
+var winnerWon = false;
+
+function selectWinnerBoxes (b1, b2, b3) {
+
+b1.classList.add("win");
+b2.classList.add("win");
+b3.classList.add("win");
+turn.innerHTML = b1.innerHTML + " Won ";
+winnerWon = true;
+}
+
+
+function DrawBoxes (b1, b2, b3, b4, b5, b6, b7, b8, b9) {
+
+b1.classList.add("draw");
+b2.classList.add("draw");
+b3.classList.add("draw");
+b4.classList.add("draw");
+b5.classList.add("draw");
+b6.classList.add("draw");
+b7.classList.add("draw");
+b8.classList.add("draw");
+b9.classList.add("draw");
+}
+
+function getWinner() {
+
+var box1 = document.getElementById("box1"),
+box2 = document.getElementById("box2"),
+box3 = document.getElementById("box3"),
+box4 = document.getElementById("box4"),
+box5 = document.getElementById("box5"),
+box6 = document.getElementById("box6"),
+box7 = document.getElementById("box7"),
+box8 = document.getElementById("box8"),
+box9 = document.getElementById("box9");
+
+if(box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML)
+	selectWinnerBoxes(box1, box2, box3);
+
+else if(box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
+	selectWinnerBoxes(box4, box5, box6);
+
+else if(box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML)
+	selectWinnerBoxes(box7, box8, box9);
+
+else if(box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML)
+	selectWinnerBoxes(box1, box4, box7);
+
+else if(box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML)
+	selectWinnerBoxes(box2, box5, box8);
+
+else if(box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML)
+	selectWinnerBoxes(box3, box6, box9);
+
+else if(box1.innerHTML !== "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML)
+	selectWinnerBoxes(box1, box5, box9);
+
+else if(box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML)
+	selectWinnerBoxes(box3, box5, box7);
+
+}
+
+
+
+
+for (var i = 0; i < boxes.length; i++) {
+boxes[i].onclick = function() {
+if (winnerWon) {
+return false;
+}
+if (this.innerHTML !== "X" && this.innerHTML !== "O") {
+if (X_or_O%2 === 0) {
+console.log(X_or_O);
+this.innerHTML = "X";
+turn.innerHTML = "O Turn Now";
+getWinner();
+X_or_O += 1;
+
+}else {
+console.log(X_or_O);
+this.innerHTML = "O";
+turn.innerHTML = "X Turn Now";
+getWinner();
+X_or_O += 1;
+
+}
+
+if (X_or_O == boxes.length && !winnerWon) {
+	turn.innerHTML = "Draw <br> Click Play Again";
+	DrawBoxes(box1, box2, box3, box4, box5, box6, box7, box8, box9);
+
+}
+
+}
+
+};
+
+}
+
+function replay(){
+                
+for(var i = 0; i < boxes.length; i++){
+boxes[i].classList.remove("win");
+boxes[i].classList.remove("draw");
+X_or_O = 0;
+boxes[i].innerHTML = "";
+turn.innerHTML = "Play";
+turn.style.fontSize = "30px";
+winnerWon = false;
+}
+                
+}
+
+
+
+</script>
+
+</body>
+</html>
