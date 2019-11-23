@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>music</title>
+</head>
+<body>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<audio autoplay id="mysong">
+<source src="audio/Terremoto.mp3" type="audio/mp3">
+	<source src="audio/BellaCiao.mp3" type="audio/mp3">
+</audio>
+
+<div class="box" id="mainbox">
+
+<img  id="images" src="">
+</div>
+
+<div style="display: flex;">
+<button class="Player" onclick="playsong()"> Play </button>
+<button class="Player" onclick="pausesong()"> Pause </button>
+<button class="Player" onclick="resetsong()"> Reset </button>
+</div>
+
+<button id="button" onclick="musicName()">Anitta & Kevinho - Terremoto</button>
+
+<script type="text/javascript">
+	
+	var a = document.getElementById('mysong');
+	var b = document.getElementById("images");
+	var c = document.getElementById("mainbox");
+	var checkThis;
+
+	function musicName() {
+		window.open("https://www.youtube.com/watch?v=O65FBF9RamQ","width=500, height=500");
+	}
+
+
+	function playsong() {
+		a.play();
+		checkThis = setInterval(checkTime, 1000);
+
+	}
+
+	function pausesong() {
+		a.pause();
+		
+	}
+
+	function resetsong() {
+		a.pause();
+		a.currentTime = 0;
+		c.classList.remove("rebola");
+		c.classList.remove("Kevinho");
+		b.src = ""
+		
+	}
+
+
+
+function checkTime() {
+
+	console.log(a.currentTime);
+	
+
+
+
+if (a.currentTime >= 5) {
+	c.classList.add("rebola");
+	b.src = "https://media.giphy.com/media/82qZsudn53gHzEmC2d/giphy.gif";
+}
+
+
+if (a.currentTime >= 36) {
+	b.src = "https://media.giphy.com/media/1xpTrxShJhiBcWy0dq/giphy.gif";
+}
+
+if (a.currentTime >= 50) {
+	b.src = "https://media.giphy.com/media/1X8T5lWiblCbIqnj0n/giphy.gif";
+
+}
+
+if (a.currentTime >= 65) {
+	b.src = "https://media.giphy.com/media/1xpTrxShJhiBcWy0dq/giphy.gif";
+}
+
+
+if (a.currentTime >= 80) {
+	c.classList.remove("rebola");
+	c.classList.add("Kevinho");
+	b.src = "https://media.giphy.com/media/82qZsudn53gHzEmC2d/giphy.gif";
+}
+
+
+if (a.currentTime >= 105) {
+	b.src = "https://media.giphy.com/media/1X8T5lWiblCbIqnj0n/giphy.gif";
+
+}
+
+if (a.currentTime >= 125) {
+	b.src = "https://media.giphy.com/media/82qZsudn53gHzEmC2d/giphy.gif";
+
+}
+
+if (a.currentTime >= 134) {
+		c.classList.add("rebola");
+		c.classList.remove("Kevinho");
+
+}
+
+if (a.currentTime >= 148) {
+	c.classList.remove("rebola");
+	b.src = "";
+
+}
+}
+
+</script>
+
+
+</body>
+</html>
