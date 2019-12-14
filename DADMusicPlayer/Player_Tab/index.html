@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="CSS/Styles.css">
+
+
+
+	<title>Spotify V2</title>
+</head>
+
+
+
+<body style="background-color: #c7c7c7">
+
+<audio autoplay id="file">
+<source src="Music/MetallicaSadButTrue.mp3" type="audio/mp3">
+	<source src="audio/BellaCiao.mp3" type="audio/mp3">
+</audio>
+
+<div class="maincontainer">
+		<div class="title_bar">
+				<div class="title_top">
+					<div class="title_container">
+						<p id="now">Now playing</p>
+						<div class="icon_container">
+					<div><img src="Images/more.png"></div>
+				</div>
+         	</div>
+		</div>
+
+			<div class="albumSquare">
+				<img id="cover" src="Images/MetallicaBlackAlbum.jpg">
+
+						<p id="song">Sad But True</p>
+						<p id="artist">Metallica</p>
+			</div>
+
+
+  		<div class="playerShare">
+	<div class="interactions"> <img src="Images/playlist.png"> </div>
+	<div class="interactions"> <img src="Images/share.png"> </div>
+		</div>
+
+		<div class="player">
+	<button class="playerIcon" onclick="pausesong()"> <img src="Images/pause.png"> </button>
+	<button class="playerIcon" onclick="playsong()"> <img src="Images/play.png"> </button>
+	<button class="playerIcon" onclick="changeSong()"> <img src="Images/next.png"> </button>	
+		</div>
+
+
+
+
+
+
+
+
+  		<div class="tab_menu">
+  			<a href="../Main_Tab/index.html">
+		<p class="single_tab"> <img src="Images/home.jpg"> <span> Home </span> </p>
+		  </a>
+		<p class="single_tab"> <img src="Images/search.png"> Search</p>
+					
+		<p class="single_tab"> <img src="Images/library.png"> Library</p>	
+		</div>
+
+
+
+</div>
+
+
+
+</div>
+
+</div>
+
+<script type="text/javascript">
+
+var mainMusic = document.getElementById('file');
+var counter = 0;
+var checkThis;
+var a = document.getElementById('song');
+var b = document.getElementById('artist');
+var c = document.getElementsByClassName('albumSquare');
+var d = document.getElementById('cover');
+
+
+	function changeSong() {
+		counter = counter + 1;
+		console.log(counter);
+
+	if (counter == 1) {
+		mainMusic.src = "Music/ZZTopGimmeAllYourLovin.mp3";
+		b.innerHTML = "ZZ TOP";
+		a.innerHTML = "GimmeAllYourLovin`";
+		d.src = "Images/GimmeAllYourLovin.jpg";
+		d.style.backgroundColor = "#f15236";
+		d.style.borderColor = "#fdf84b";
+
+	}else if (counter == 2){
+		mainMusic.src = "Music/SoundgardenOutshined.mp3";
+		b.innerHTML = "Soundgarden";
+		a.innerHTML = "Outshined";
+		d.src = "Images/Badmotorfinger.jpg";
+		d.style.backgroundColor = "#2e2038";
+		d.style.borderColor = "#bb1d39";
+
+	}else if (counter == 3){
+		mainMusic.src = "Music/MetallicaSadButTrue.mp3";
+		b.innerHTML = "Metallica";
+		a.innerHTML = "Sad But True";
+		d.src = "Images/MetallicaBlackAlbum.jpg";
+		d.style.backgroundColor = "#555555";
+		d.style.borderColor = "#e47171";
+
+	}else if (counter > 3){
+		counter = 0;
+	}
+
+}
+
+function playsong() {
+		mainMusic.play();
+		checkThis = setInterval(checkTime, 500);
+
+	}
+
+	function pausesong() {
+		mainMusic.pause();
+		
+	}
+
+function checkTime() {
+
+	console.log(mainMusic.currentTime);
+	}
+
+</script>
+
+</body>
+
+</html>

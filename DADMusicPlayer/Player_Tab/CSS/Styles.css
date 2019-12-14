@@ -1,0 +1,240 @@
+*{	
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	-webkit-touch-callout:none;
+	-webkit-user-select:none;
+	-khtml-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+
+#now {
+  color: white;
+  font-family: Roboto-Bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+      font-size: 30px;
+          padding-top: 10px;
+
+}
+
+#artist {
+  color: white;
+  font-family: Roboto-Thin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 25px;
+  padding-bottom: 25px;
+
+}
+
+#song {
+  color: white;
+  font-family: Roboto-Regular;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 40px;
+  padding-top: 5px;
+
+}
+
+.albumSquare {
+    align-items: center;
+  justify-content: center;
+
+  width: 100%
+}
+
+#cover{
+  width: 300px;
+  height:300px;
+    padding-top: 110px;
+    padding-left: 103px;
+    padding-right: 103px;
+    border-bottom: solid;
+    border-color: #e47171;
+    border-bottom-width: 10px;
+    background-color: #555555;
+
+}
+
+.title_container {
+  
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  float: left;
+
+
+}
+
+.title_top{
+  overflow: hidden;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  height: 80px;
+}
+
+
+.maincontainer{
+	width: 506px;
+	height: 900px;
+	display: block;
+	box-sizing: border-box;
+	overflow: hidden;
+	border-top: solid 35px #383838;
+	background-color: black;
+	margin: 50px auto;
+	position: relative;
+}
+
+.background{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 825px;
+  width: 100%;
+}
+
+.title_bar{
+  background-color: black;
+  width: 506px;
+  height: 140px;
+}
+
+.textBox{
+  height:225px; 
+  width:100%;
+
+}
+
+.icon_container{
+  width: 63%;
+  float: right;
+  height: 100%;
+
+}
+
+.icon_container div{
+  height: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  float: right;
+
+}
+
+.icon_container img{
+  height: 30px;
+  cursor: pointer;
+}
+
+
+.tab_menu{
+  display: block;
+  width: 500px;
+}
+
+.single_tab{
+  width: 33.3333%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  float: left;
+  font-family: Roboto-Regular;
+  font-size: 26px;
+  border-bottom: solid 15px transparent;
+  color: white;
+  padding-top: 20px;
+
+}
+
+.single_tab span{
+  display: block;
+}
+
+.single_tab img{
+  height:45px;
+  width:45px;
+}
+
+.single_tab:hover,
+.active{
+  color: white;
+  border-color: white;
+  cursor: pointer;
+}
+
+.playerIcon{
+  width: 33.3333%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  float: left;
+  color: white;
+  padding-top: 20px;
+  border: none;
+  padding-bottom: 35px;
+
+}
+
+.playerIcon img{
+  height:60px;
+  width:60px;
+  border: none;
+}
+
+.interactions{
+  width: 50%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  float: left;
+  color: white;
+  padding-bottom: : 10px;
+  border: none;
+  padding-bottom: 15px;
+
+}
+
+.interactions img{
+  height:35px;
+  width:35px;
+  border: none;
+}
+
+
+@font-face {
+font-family: "Roboto-Regular";
+src:url(font/Roboto-Regular.ttf);
+
+
+}
+
+@font-face {
+font-family: "Roboto-Thin";
+src:url(font/Roboto-Thin.ttf);
+}
+
+@font-face {
+font-family: "Roboto-Bold";
+src:url(font/Roboto-Bold.ttf);
+}
